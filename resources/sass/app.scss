@@ -1,0 +1,28 @@
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.posts-list {
+
+    width: 50%;
+
+    margin: 50px auto;
+
+    h1 {
+        display: inline-block;
+    }
+
+    .edit {
+        display: inline-block;
+        float: right;
+        margin-top: 5px;
+    }
+
+    .badge {
+
+        float: right;
+    }
+
+}
