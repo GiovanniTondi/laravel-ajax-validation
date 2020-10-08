@@ -10922,3 +10922,7 @@ body {
   float: right;
 }
 
+.posts-list .alert {
+  margin-top: 5px;
+}
+

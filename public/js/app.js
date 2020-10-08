@@ -30233,10 +30233,10 @@ function getData() {
 
 function printData(data) {
   var target = $('#posts');
-  target.html('');
+  target.html(''); // console.log(data);
 
   for (var i = 0; i < data.length; i++) {
-    target.append('<a href="#" class="list-group-item list-group-item-action">' + data[i]['title'] + '<span class="badge badge-primary badge-pill">' + data[i]['like'] + '</span>' + '</a>');
+    target.append('<a href="/post/' + data[i]['id'] + '" class="list-group-item list-group-item-action">' + data[i]['title'] + '<span class="badge badge-primary badge-pill">' + data[i]['like'] + '</span>' + '</a>');
   }
 }
 

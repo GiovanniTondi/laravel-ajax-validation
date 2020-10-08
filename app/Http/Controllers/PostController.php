@@ -13,6 +13,13 @@ class PostController extends Controller
         return view('index');
     }
 
+    public function show($id) {
+
+        $post = Post::findOrFail($id);
+
+        return view('post-show', compact('post'));
+    }
+
     public function create() {
 
         return view('post-create');
@@ -31,5 +38,27 @@ class PostController extends Controller
         $post = Post::create($data);
 
         return redirect() -> route('post-index');
+    }
+
+    public function edit($id) {
+
+        $post = Post::findOrFail($id);
+
+        return view('post-edit', compact('post'));
+    }
+
+    public function update(Request $request, $id) {
+
+        $data = $request -> validate([
+            'title'         => 'required',
+            'description'   => 'required|min:5',
+            'like'          => 'required|gte:0'
+        ]);
+
+        $post = Post::findOrFail($id);
+
+        $post -> update($data);
+
+        return redirect() -> route('post-show', $id);
     }
 }
