@@ -9,6 +9,7 @@
         <li class="list-group-item list-group-item-primary">
             <h1>Edit Post</h1>
             <div class="edit">
+                <a class="btn btn-danger" href="{!! route('post-delete', $post -> id) !!}">DELETE</a>
                 <a class="btn btn-dark" href="{!! route('post-show', $post -> id) !!}">BACK</a>
             </div>
         </li>

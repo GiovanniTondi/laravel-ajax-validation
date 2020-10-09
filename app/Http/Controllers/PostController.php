@@ -61,4 +61,15 @@ class PostController extends Controller
 
         return redirect() -> route('post-show', $id);
     }
+
+    public function delete($id) {
+
+        $post = Post::findOrFail($id);
+
+        $post -> delete();
+
+        $message = 'Post with ID: ' . $id . ' DELETED!';
+
+        return redirect() -> route('post-index') -> with('message', $message);
+    }
 }

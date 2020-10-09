@@ -4,6 +4,17 @@
 
 <div class="posts-list">
 
+    @if (session('message'))
+
+        <div class="alert alert-success alert-dismissible fade show" data-dismiss="alert" role="alert">
+
+            {{ session('message') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+        </div>
+    @endif
+
     <ul class="list-group">
         <li class="list-group-item list-group-item-primary">
             <h1>Posts</h1>
@@ -14,7 +25,5 @@
         <div id="posts"></div>
     </ul>
 </div>
-
-<script src="{!! asset('/js/app.js') !!}" charset="utf-8"></script>
 
 @endsection
